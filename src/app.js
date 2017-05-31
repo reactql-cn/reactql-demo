@@ -11,6 +11,7 @@ import { gql, graphql } from 'react-apollo';
 // Routing
 import {
   Link,
+  NavLink,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -135,7 +136,7 @@ class GraphQLMessage extends React.PureComponent {
 
 // Example of CSS, SASS and LESS styles being used together
 const Styles = () => (
-  <ul className={css.styleExamples}>
+  <ul className={css.example}>
     <li className={css.example}>Styled by CSS</li>
     <li className={sass.example}>Styled by SASS</li>
     <li className={less.example}>Styled by LESS</li>
@@ -154,10 +155,10 @@ export default () => (
     <GraphQLMessage />
     <hr />
     <ul>
-      <li><Link to="/">Index</Link></li>
-      <li><Link to="/page/about">About</Link></li>
-      <li><Link to="/page/contact">Contact</Link></li>
-      <li><Link to="/old/path">Redirect from /old/path &#8594; /new/path</Link></li>
+      <li><NavLink exact to="/" activeClassName={sass.active} >Index</NavLink></li>
+      <li><NavLink to="/page/about" activeClassName={sass.active}>About</NavLink></li>
+      <li><NavLink to="/page/contact" activeClassName={sass.active}>Contact</NavLink></li>
+      <li><NavLink to="/old/path" activeClassName={sass.active}>Redirect from /old/path &#8594; /new/path</NavLink></li>
     </ul>
     <hr />
     <Switch>
